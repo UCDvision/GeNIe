@@ -1,2 +1,67 @@
-# GeNIe
-Official implementation for "GeNIe: Generative Hard Negative Images as Data Augmentation"
+# NOLA: Networks as Linear Combination of Low Rank Random Basis
+
+This Repository is an official implementation of [NOLA](https://arxiv.org/abs/2312.02548).
+Our code is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt). 
+
+## Overview
+
+
+GeNIe is a novel data augmentation technique employing Generative text-based latent Diffusion models. GeNIe merges contrasting data points (an image from the source category and a text prompt from the target category) using a latent diffusion model conditioned on the text prompt. By limiting diffusion iterations, we preserve low-level and background features from the source image while representing the target category, creating challenging samples. Additionally, our method further enhances its effectiveness by dynamically adjusting the noise level for each image, known as GeNIe-Ada. Rigorous experimentation across both few-shot and long-tail distribution scenarios substantiates the superior performance of our approach over existing techniques.
+
+![genie_teaser4](https://github.com/UCDvision/GeNIe/assets/62820830/33aea37e-cfaa-4f5e-824a-cd7d729b451c)
+
+## Requirements
+
+All our experiments use the PyTorch library. Install PyTorch and ImageNet dataset following the [official PyTorch ImageNet training code](https://github.com/pytorch/examples/tree/master/imagenet). We used Python 3.7 for our experiments.
+
+## Getting Started 
+Please install dependencies in a virtual environment: 
+ 
+ ```
+ pip install transformers
+ pip install diffusers==0.19.0
+ ```
+## Demo
+
+
+
+## Few-Shot on tiered-ImageNet and mini-ImageNet
+
+
+1. Use the imagenet_sampler.ipynb notebook to generate episodes for mini-ImageNet and tiered-ImageNet
+
+2. To generate augmentations for all baselines (txt2img, img2img, and GeNIe), utilize the generate_data.sh script as follows:
+```
+generate_data.sh 0 20 30
+```
+This script employs GPU 0 to generate augmentations for episodes 20 to 30.
+
+
+3. Train on augmented dataset:
+```
+python src/gpt2_decode.py \
+    --vocab ./vocab \
+    --sample_file ./trained_models/GPT2_M/e2e/predict.26290.b10p08r4.jsonl \
+    --input_file ./data/e2e/test_formatted.jsonl \
+    --output_ref_file e2e_ref.txt \
+    --output_pred_file e2e_pred.txt
+```
+
+
+## Citation
+
+If you make use of the code, please cite the following work:
+```
+@misc{koohpayegani2023genie,
+      title={GeNIe: Generative Hard Negative Images Through Diffusion}, 
+      author={Soroush Abbasi Koohpayegani and Anuj Singh and K L Navaneet and Hadi Jamali-Rad and Hamed Pirsiavash},
+      year={2023},
+      eprint={2312.02548},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
+## License
+
+This project is under the MIT license.
