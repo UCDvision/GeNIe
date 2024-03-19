@@ -1,6 +1,6 @@
-# NOLA: Networks as Linear Combination of Low Rank Random Basis
+# GeNIe: Generative Hard Negative Images Through Diffusion
 
-This Repository is an official implementation of [NOLA](https://arxiv.org/abs/2312.02548).
+This Repository is an official implementation of [GeNIe](https://arxiv.org/abs/2312.02548).
 Our code is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt). 
 
 ## Overview
@@ -41,12 +41,7 @@ This script employs GPU 0 to generate augmentations for episodes 20 to 30.
 
 3. Train on augmented dataset:
 ```
-python src/gpt2_decode.py \
-    --vocab ./vocab \
-    --sample_file ./trained_models/GPT2_M/e2e/predict.26290.b10p08r4.jsonl \
-    --input_file ./data/e2e/test_formatted.jsonl \
-    --output_ref_file e2e_ref.txt \
-    --output_pred_file e2e_pred.txt
+python 
 ```
 
 
