@@ -23,6 +23,8 @@ Please install dependencies in a virtual environment:
  ```
 ## Demo
 
+You can try GeNIe with this colab [GeNIe Colab](https://colab.research.google.com/drive/1Q3jBK4sfyNU5b1dQZgIP8uS2ObzbIE8X). 
+
 
 
 ## Few-Shot on tiered-ImageNet and mini-ImageNet
