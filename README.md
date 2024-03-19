@@ -38,12 +38,13 @@ generate_data.sh 0 20 30
 ```
 This script employs GPU 0 to generate augmentations for episodes 20 to 30.
 
+3. To generate Noise Adaptive dataset for few-shot learning - run `/few_shot/noise_adaptive.ipynb`
 
 3. Train on augmented dataset:
 ```
-python 
+CUDA_VISIBLE_DEVICES=0 python ./train.py --data_path /home/datadrive/mini_imagenet_fs --backbone resnet18 --eval_path /home/datadrive/mini_imagenet_fs/models/mini_r18_v2.pth --transform weak --caching_epochs 5 --n_shots 1 --clf LR --augs_name train_negative_noise_noad_r18_v3 &> PATH_TO_LOG.txt & 
 ```
-
+Change all paths and GPU/CUDA device IDs as per your settings. 
 
 ## Citation
 
