@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "run on gpu $1: generating dataset with seed $4 : $2 class, $3 shots"
+echo "run on gpu $1: start seed $2 : end seed $3"
 
 DATASET_DIR="./datasets/mini_imagenet_fs"
 
