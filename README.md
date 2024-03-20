@@ -13,7 +13,7 @@ GeNIe is a novel data augmentation technique employing Generative text-based lat
 ## Visualizing Generated Samples
 
 GeNIe effectively generates hard negatives for the source image class by preserving low-level features and transforming its main target class according to the prompt. 
-![genie_teaser5](https://github.com/UCDvision/GeNIe/assets/genie_vis_supp.jpg)
+![genie_teaser5](https://github.com/UCDvision/GeNIe/blob/main/assets/genie_vis_supp.jpg)
 
 ## Noise Adaptive Sampling
 
