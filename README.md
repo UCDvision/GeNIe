@@ -13,17 +13,17 @@ GeNIe is a novel data augmentation technique employing Generative text-based lat
 ## Visualizing Generated Samples
 
 GeNIe effectively generates hard negatives for the source image class by preserving low-level features and transforming its main target class according to the prompt. 
-![genie_teaser5](https://github.com/UCDvision/GeNIe/blob/main/assets/genie_vis_supp.jpg)
+![genie_teaser6](https://github.com/UCDvision/GeNIe/blob/main/assets/genie_vis_supp.jpg)
 
 ## Noise Adaptive Sampling
 
-A small noise ratio results in a generated image that closely resembles the source and conversely, when the noise ratio is large, it tends to resemble the semantics of the target category. Thus, to choose the optimal ratio adaptively for each source image to generate images that preserve the low-level semantics of the source image while effectively representing the semantics of the target category, we propose GeNIE-Ada. Genie-Ada traces the semantic trajectory from source image embeddings to target class embedding through the lens of the classifier `f(.)`, to then adaptively select the sample right after the largest semantic shift.  
-![genie_teaser5](https://github.com/UCDvision/GeNIe/assets/geniepp_teaser3.jpg)
+A small noise ratio generates an image that closely resembles the source. Conversely, when the noise ratio is large, it resembles the target category's semantics. Thus, to choose the optimal ratio adaptively for each source image to generate images that preserve the low-level semantics of the source image while effectively representing the semantics of the target category, we propose GeNIE-Ada. Genie-Ada traces the semantic trajectory from source image embeddings to target class embedding through the lens of the classifier `f(.)`, to then adaptively select the sample right after the largest semantic shift.  
+![genie_teaser5](https://github.com/UCDvision/GeNIe/blob/main/assets/geniepp_teaser3.jpg)
 
 
 ## Requirements
 
-All our experiments use the PyTorch library. Install PyTorch and ImageNet dataset following the [official PyTorch ImageNet training code](https://github.com/pytorch/examples/tree/master/imagenet). We used Python 3.7 for our experiments.
+All our experiments use the PyTorch library. Install PyTorch and ImageNet datasets following the [official PyTorch ImageNet training code](https://github.com/pytorch/examples/tree/master/imagenet). We used Python 3.7 for our experiments.
 
 ## Getting Started 
 Please install dependencies in a virtual environment: 
@@ -51,7 +51,7 @@ This script employs GPU 0 to generate augmentations for episodes 20 to 30.
 
 3. To generate Noise Adaptive dataset for few-shot learning - run `/few_shot/noise_adaptive.ipynb`
 
-3. Train on augmented dataset:
+3. Train on the augmented dataset:
 ```
 CUDA_VISIBLE_DEVICES=0 python ./train.py --data_path /home/datadrive/mini_imagenet_fs --backbone resnet18 --eval_path /home/datadrive/mini_imagenet_fs/models/mini_r18_v2.pth --transform weak --caching_epochs 5 --n_shots 1 --clf LR --augs_name train_negative_noise_noad_r18_v3 &> PATH_TO_LOG.txt & 
 ```
