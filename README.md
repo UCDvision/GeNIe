@@ -10,6 +10,17 @@ GeNIe is a novel data augmentation technique employing Generative text-based lat
 
 ![genie_teaser4](https://github.com/UCDvision/GeNIe/assets/62820830/33aea37e-cfaa-4f5e-824a-cd7d729b451c)
 
+## Visualizing Generated Samples
+
+GeNIe effectively generates hard negatives for the source image class by preserving low-level features and transforming its main target class according to the prompt. 
+![genie_teaser5](https://github.com/UCDvision/GeNIe/assets/genie_vis_supp.jpg)
+
+## Noise Adaptive Sampling
+
+A small noise ratio results in a generated image that closely resembles the source and conversely, when the noise ratio is large, it tends to resemble the semantics of the target category. Thus, to choose the optimal ratio adaptively for each source image to generate images that preserve the low-level semantics of the source image while effectively representing the semantics of the target category, we propose GeNIE-Ada. Genie-Ada traces the semantic trajectory from source image embeddings to target class embedding through the lens of the classifier `f(.)`, to then adaptively select the sample right after the largest semantic shift.  
+![genie_teaser5](https://github.com/UCDvision/GeNIe/assets/geniepp_teaser3.jpg)
+
+
 ## Requirements
 
 All our experiments use the PyTorch library. Install PyTorch and ImageNet dataset following the [official PyTorch ImageNet training code](https://github.com/pytorch/examples/tree/master/imagenet). We used Python 3.7 for our experiments.
