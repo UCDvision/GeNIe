@@ -1,7 +1,7 @@
 # GeNIe: Generative Hard Negative Images Through Diffusion
 
 This Repository is an official implementation of [GeNIe](https://arxiv.org/abs/2312.02548).
-Our code is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt). 
+Our code for generating samples is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt) and for few-shot testing is based on [UNISIAM](https://github.com/bbbdylan/unisiam). 
 
 ## Overview
 
