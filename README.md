@@ -1,8 +1,5 @@
 # GeNIe: Generative Hard Negative Images Through Diffusion
 
-This Repository is an official implementation of [GeNIe](https://arxiv.org/abs/2312.02548).
-Our code for generating samples is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt) and for few-shot testing is based on [UNISIAM](https://github.com/bbbdylan/unisiam). 
-
 ## Overview
 
 
@@ -57,19 +54,7 @@ CUDA_VISIBLE_DEVICES=0 python ./train.py --data_path /home/datadrive/mini_imagen
 ```
 Change all paths and GPU/CUDA device IDs as per your settings. 
 
-## Citation
-
-If you make use of the code, please cite the following work:
-```
-@misc{koohpayegani2023genie,
-      title={GeNIe: Generative Hard Negative Images Through Diffusion}, 
-      author={Soroush Abbasi Koohpayegani and Anuj Singh and K L Navaneet and Hadi Jamali-Rad and Hamed Pirsiavash},
-      year={2023},
-      eprint={2312.02548},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
+Our code for generating samples is based on [BOOMERANG](https://colab.research.google.com/drive/1PV5Z6b14HYZNx1lHCaEVhId-Y4baKXwt) and for few-shot testing is based on [UNISIAM](https://github.com/bbbdylan/unisiam). 
 
 ## License
 
